@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftnix Digital - Admin Dashboard</title>
+    
+    <!-- Bootstrap 5 (Grid & Utils only) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-body">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="logo-icon">⚡</span>
+                <div class="logo-text">
+                    <span class="brand-name">CRAFTNIX</span>
+                    <span class="brand-suffix">DIGITAL ADMIN</span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <span id="userEmail" class="d-none d-md-inline text-muted" style="font-size: 0.8rem;">admin@craftnix.com</span>
+                <button class="btn btn-outline-danger btn-sm rounded-pill px-3" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-title">Menu</div>
+            <div class="sidebar-nav">
+                <a href="#projects" class="sidebar-link active" data-section="projects">
+                    <i class="fas fa-project-diagram"></i> Projects
+                </a>
+                <a href="#services" class="sidebar-link" data-section="services">
+                    <i class="fas fa-rocket"></i> Services
+                </a>
+                <a href="#testimonials" class="sidebar-link" data-section="testimonials">
+                    <i class="fas fa-quote-right"></i> Testimonials
+                </a>
+                <a href="#pricing" class="sidebar-link" data-section="pricing">
+                    <i class="fas fa-tags"></i> Pricing
+                </a>
+                <a href="#blogs" class="sidebar-link" data-section="blogs">
+                    <i class="fas fa-feather-alt"></i> Blog
+                </a>
+                <a href="#leads" class="sidebar-link" data-section="leads">
+                    <i class="fas fa-user-tie"></i> Leads
+                </a>
+            </div>
+            
+            <div class="sidebar-footer mt-auto pt-4">
+                <div class="sidebar-title">Shortcuts</div>
+                <a href="index.html" class="sidebar-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Live Site
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            
+            <!-- Projects Section -->
+            <section id="projects" class="admin-section visible">
+                <div class="section-header">
+                    <h2>Projects</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0;" id="addProjectBtn">
+                        <i class="fas fa-plus"></i> Add Project
+                    </button>
+                </div>
+                <div id="projectsList" class="admin-grid-list"></div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="admin-section">
+                <div class="section-header">
+                    <h2>Services</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0;" id="addServiceBtn">
+                        <i class="fas fa-plus"></i> Add Service
+                    </button>
+                </div>
+                <div id="servicesList" class="admin-grid-list"></div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="admin-section">
+                <div class="section-header">
+                    <h2>Testimonials</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0;" id="addTestimonialBtn">
+                        <i class="fas fa-plus"></i> Add Testimonial
+                    </button>
+                </div>
+                <div id="testimonialsList" class="admin-grid-list"></div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="admin-section">
+                <div class="section-header">
+                    <h2>Pricing</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0;" id="addPricingBtn">
+                        <i class="fas fa-plus"></i> Add Plan
+                    </button>
+                </div>
+                <div id="pricingList" class="admin-grid-list"></div>
+            </section>
+
+            <!-- Blog Section -->
+            <section id="blogs" class="admin-section">
+                <div class="section-header">
+                    <h2>Blog Posts</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0;" id="addBlogBtn">
+                        <i class="fas fa-plus"></i> Add Post
+                    </button>
+                </div>
+                <div id="blogsList" class="admin-grid-list"></div>
+            </section>
+
+            <!-- Leads Section -->
+            <section id="leads" class="admin-section">
+                <div class="section-header">
+                    <h2>Recent Leads</h2>
+                    <button class="btn-admin-save" style="width: auto; margin:0; background:rgba(255,255,255,0.05);" id="exportLeadsBtn">
+                        <i class="fas fa-download"></i> Export CSV
+                    </button>
+                </div>
+                <div class="leads-section glass-card">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leadsTableBody">
+                                <!-- Leads data loaded via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ========================================
+         MODALS (Custom System)
+         ======================================== -->
+
+    <!-- Project Modal -->
+    <div class="custom-modal-overlay" id="projectModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeAdminModal('projectModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-badge">📁 PROJECT</div>
+            <h3 class="admin-modal-title">Project Details</h3>
+            <form id="projectForm">
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Project Title *</label>
+                    <input type="text" class="form-input" id="projectTitle" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Category *</label>
+                    <select class="form-input" id="projectCategory" required>
+                        <option value="web">Web Design</option>
+                        <option value="branding">Branding</option>
+                        <option value="ui-ux">UI/UX</option>
+                        <option value="app">Mobile App</option>
+                    </select>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Project Link</label>
+                    <input type="url" class="form-input" id="projectLink" placeholder="https://...">
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Description (Short)</label>
+                    <textarea class="form-input" id="projectDesc" rows="2"></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Order (Number)</label>
+                    <input type="number" class="form-input" id="projectOrder" value="1">
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Cover Image *</label>
+                    <input type="file" class="form-input" id="projectImage" accept="image/*">
+                    <div id="projectImagePreview" class="image-preview-box"></div>
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="projectActive" checked>
+                    <label for="projectActive">Visible on website</label>
+                </div>
+                <button type="submit" class="btn-admin-save">
+                    <i class="fas fa-save"></i> Save Project
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Service Modal -->
+    <div class="custom-modal-overlay" id="serviceModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeAdminModal('serviceModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-badge">⚙️ SERVICE</div>
+            <h3 class="admin-modal-title">Service Details</h3>
+            <form id="serviceForm">
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Service Name *</label>
+                    <input type="text" class="form-input" id="serviceName" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Description *</label>
+                    <textarea class="form-input" id="serviceDescription" rows="3" required></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Icon Class (FontAwesome) *</label>
+                    <input type="text" class="form-input" id="serviceIcon" placeholder="fas fa-code" required>
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="serviceActive" checked>
+                    <label for="serviceActive">Active</label>
+                </div>
+                <button type="submit" class="btn-admin-save">
+                    <i class="fas fa-save"></i> Save Service
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Testimonial Modal -->
+    <div class="custom-modal-overlay" id="testimonialModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeAdminModal('testimonialModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-badge">💬 TESTIMONIAL</div>
+            <h3 class="admin-modal-title">Testimonial Details</h3>
+            <form id="testimonialForm">
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Type</label>
+                    <select class="form-input" id="testimonialType">
+                        <option value="text">Text Only</option>
+                        <option value="video">Video Testimonial</option>
+                    </select>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Client Name *</label>
+                    <input type="text" class="form-input" id="testimonialName" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Company / Role</label>
+                    <input type="text" class="form-input" id="testimonialCompany">
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Review Content *</label>
+                    <textarea class="form-input" id="testimonialText" rows="3" required></textarea>
+                </div>
+                <div id="videoFields" style="display: none;">
+                    <div class="admin-form-group">
+                        <label class="form-label-admin">Video URL (YouTube/Vimeo)</label>
+                        <input type="url" class="form-input" id="testimonialVideoUrl">
+                    </div>
+                    <div class="admin-form-group">
+                        <label class="form-label-admin">Video Thumbnail</label>
+                        <input type="file" class="form-input" id="testimonialThumbnail" accept="image/*">
+                        <div id="thumbnailPreview" class="image-preview-box"></div>
+                    </div>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Rating (1-5)</label>
+                    <select class="form-input" id="testimonialRating">
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                    </select>
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="testimonialActive" checked>
+                    <label for="testimonialActive">Active</label>
+                </div>
+                <button type="submit" class="btn-admin-save">
+                    <i class="fas fa-save"></i> Save Testimonial
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pricing Modal -->
+    <div class="custom-modal-overlay" id="pricingModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeAdminModal('pricingModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-badge">🏷️ PRICING</div>
+            <h3 class="admin-modal-title">Plan Details</h3>
+            <form id="pricingForm">
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Plan Name *</label>
+                    <input type="text" class="form-input" id="pricingName" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Price (USD) *</label>
+                    <input type="number" class="form-input" id="pricingPrice" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Features (One per line) *</label>
+                    <textarea class="form-input" id="pricingFeatures" rows="5" required></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Order</label>
+                    <input type="number" class="form-input" id="pricingOrder" value="1">
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="pricingFeatured">
+                    <label for="pricingFeatured">Featured (Recommended)</label>
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="pricingActive" checked>
+                    <label for="pricingActive">Active</label>
+                </div>
+                <button type="submit" class="btn-admin-save">
+                    <i class="fas fa-save"></i> Save Plan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="custom-modal-overlay" id="blogModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeAdminModal('blogModal')">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-badge">✍️ BLOG</div>
+            <h3 class="admin-modal-title" id="blogModalTitle">Add Post</h3>
+            <form id="blogForm">
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Post Title *</label>
+                    <input type="text" class="form-input" id="blogTitle" required>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Tag / Category *</label>
+                    <select class="form-input" id="blogTag" required>
+                        <option value="UI/UX">UI/UX</option>
+                        <option value="Branding">Branding</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="Growth">Growth</option>
+                    </select>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Excerpt (Short) *</label>
+                    <textarea class="form-input" id="blogExcerpt" rows="2" required></textarea>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">External Link</label>
+                    <input type="url" class="form-input" id="blogLink">
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Read Time (min)</label>
+                    <input type="number" class="form-input" id="blogReadTime" value="5">
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Cover Image</label>
+                    <input type="file" class="form-input" id="blogImage" accept="image/*">
+                    <div id="blogImagePreview" class="image-preview-box"></div>
+                </div>
+                <div class="admin-form-group">
+                    <label class="form-label-admin">Order</label>
+                    <input type="number" class="form-input" id="blogOrder" value="1">
+                </div>
+                <div class="form-check-admin">
+                    <input type="checkbox" id="blogActive" checked>
+                    <label for="blogActive">Active</label>
+                </div>
+                <button type="submit" class="btn-admin-save">
+                    <i class="fas fa-save"></i> Save Post
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

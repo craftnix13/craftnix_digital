@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags (Will be updated dynamically) -->
+    <title>Blog Post | CraftNix Digital</title>
+    <meta name="description" content="Read our latest blog post on CraftNix Digital.">
+    <meta name="keywords" content="blog, CraftNix Digital">
+    <meta name="author" content="CraftNix Digital">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Will be updated dynamically) -->
+    <meta property="og:title" content="Blog Post | CraftNix Digital">
+    <meta property="og:description" content="Read our latest blog post.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="CraftNix Digital">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Files -->
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    <style>
+        
+
+        /* Hero */
+        .blog-hero {
+            padding: 60px 0 60px;
+            background: linear-gradient(135deg, rgba(123,63,228,0.08) 0%, transparent 60%);
+            position: relative; overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute; top: -200px; right: -100px;
+            width: 500px; height: 500px;
+            background: rgba(123,63,228,0.12);
+            border-radius: 50%; filter: blur(80px); pointer-events: none;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .blog-tag {
+                 position: unset;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple), var(--orange));
+            color: white; padding: 0.4rem 1rem; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900; line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--purple), var(--orange));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .blog-meta {
+            display: flex; align-items: center; gap: 2rem;
+            flex-wrap: wrap; margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);
+        }
+
+        .blog-meta span { display: flex; align-items: center; gap: 0.5rem; }
+
+        .blog-meta i { color: var(--purple); }
+
+        /* Content */
+        .blog-content { padding: 4rem 0 6rem; }
+
+        .blog-image {
+            width: 100%; max-height: 500px; object-fit: cover;
+            border-radius: var(--radius); margin-bottom: 2rem;
+        }
+
+        .blog-text {
+            color: var(--text-light); font-size: 1.1rem; line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .blog-text h2 {
+            font-size: 1.8rem; font-weight: 700; margin: 2rem 0 1rem;
+            color: var(--text-white);
+        }
+
+        .blog-text h3 {
+            font-size: 1.4rem; font-weight: 600; margin: 1.5rem 0 1rem;
+            color: var(--text-white);
+        }
+
+        .blog-text p { margin-bottom: 1.5rem; }
+
+        .blog-text ul, .blog-text ol {
+            margin: 1.5rem 0; padding-left: 2rem;
+        }
+
+        .blog-text li {
+            margin-bottom: 0.5rem; color: var(--text-light);
+        }
+
+        .blog-text blockquote {
+            border-left: 4px solid var(--purple);
+            padding-left: 1.5rem; margin: 2rem 0;
+            font-style: italic; color: var(--text-muted);
+            background: rgba(123,63,228,0.05);
+            padding: 1.5rem; border-radius: 0 12px 12px 0;
+        }
+
+        .blog-text code {
+            background: var(--bg-card); padding: 0.2rem 0.5rem;
+            border-radius: 4px; font-family: 'Courier New', monospace;
+            font-size: 0.9em; color: var(--orange);
+        }
+
+        .blog-text pre {
+            background: var(--bg-card); padding: 1.5rem;
+            border-radius: 8px; overflow-x: auto; margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .blog-text pre code {
+            background: none; padding: 0; color: var(--text-light);
+        }
+
+        /* Author */
+        .author-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: var(--radius); padding: 2rem; margin: 3rem 0;
+            display: flex; align-items: center; gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--orange));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.5rem; font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-white);
+        }
+
+        .author-info p {
+            color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;
+        }
+
+        /* Navigation */
+        .blog-navigation {
+            display: flex; justify-content: space-between;
+            gap: 2rem; margin: 3rem 0; padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .nav-link:hover {
+            border-color: rgba(123,63,228,0.3);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.prev { text-align: left; }
+        .nav-link.next { text-align: right; }
+
+        .nav-link small {
+            display: block; font-size: 0.8rem; color: var(--text-muted);
+            margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .nav-link h5 {
+            font-size: 1rem; font-weight: 600; color: var(--text-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-link p {
+            font-size: 0.85rem; color: var(--text-light);
+        }
+
+        /* Related Posts */
+        .related-posts {
+            margin-top: 4rem;
+        }
+
+        .related-posts h3 {
+            font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .related-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: var(--radius); overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(123,63,228,0.3);
+        }
+
+        .related-card img {
+            width: 100%; height: 150px; object-fit: cover;
+        }
+
+        .related-card-body {
+            padding: 1.5rem;
+        }
+
+        .related-card h4 {
+            font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .related-card p {
+            color: var(--text-muted); font-size: 0.85rem;
+            line-height: 1.5; margin-bottom: 1rem;
+        }
+
+        .related-card .blog-read-more {
+            color: var(--orange); font-weight: 600; font-size: 0.85rem;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center; padding: 5rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading i {
+            font-size: 3rem; margin-bottom: 1rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .footer-links-row {
+            display: flex; justify-content: center; gap: 2rem;
+            flex-wrap: wrap; margin-bottom: 1.5rem;
+        }
+
+        .footer-links-row a {
+            color: var(--text-muted); font-size: 0.88rem;
+            transition: var(--transition);
+        }
+
+        .footer-links-row a:hover { color: var(--purple); }
+
+        .footer-copy { color: var(--text-muted); font-size: 0.82rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .blog-navigation { flex-direction: column; }
+            .nav-link { margin-bottom: 1rem; }
+            .author-card { flex-direction: column; text-align: center; }
+            .related-grid { grid-template-columns: 1fr; }
+            .nav-links, .btn-nav { display: none; }
+            .hamburger { display: flex; }
+        }
+
+        /* Fade in */
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+     PAGE LOADER
+     ======================================== -->
+<div id="pageLoader">
+    <div class="loader-logo"><img src="assets/images/loader-craftnix.png"></div>
+    <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+    </div>
+</div>
+
+
+<!-- ========================================
+     SCROLL PROGRESS BAR (Top)
+     ======================================== -->
+<div id="scrollProgressBar"></div>
+
+<!-- ========================================
+     THEME TOGGLE BUTTON
+     ======================================== -->
+<button id="themeToggle" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- ========================================
+     NAVBAR
+     ======================================== -->
+<!-- NAVBAR -->
+<nav class="navbar fixed-top" id="mainNavbar">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html#home">
+            <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="nav-logo">
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="navbar-nav-desktop d-none d-lg-flex align-items-center gap-1 mb-0">
+            <li><a class="nav-link" href="index.html#services">Services</a></li>
+            <li><a class="nav-link" href="index.html#portfolio">Work</a></li>
+            <li><a class="nav-link" href="index.html#process">Process</a></li>
+            <li><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="nav-link" href="index.html#about">About</a></li>
+            <li><a class="nav-link" href="index.html#blog">Blog</a></li>
+            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-glow d-none d-lg-inline-flex" onclick="openModal('projectModal')">
+                <i class="fas fa-rocket"></i> Start Project
+            </button>
+            <!-- Mobile Hamburger -->
+            <button class="offcanvas-toggle-btn d-lg-none" onclick="openOffcanvas()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ========== OFFCANVAS OVERLAY ========== -->
+<div class="offcanvas-overlay" id="offcanvasOverlay" onclick="closeOffcanvas()"></div>
+
+<!-- ========== OFFCANVAS PANEL ========== -->
+<div class="offcanvas-panel" id="offcanvasPanel">
+    <div class="offcanvas-header">
+        <img src="assets/images/craftnix_logo.png" alt="CraftNix" class="offcanvas-logo">
+        <button class="offcanvas-close-btn" onclick="closeOffcanvas()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <nav class="offcanvas-nav">
+        <a href="index.html#services" onclick="closeOffcanvas()">Services</a>
+        <a href="index.html#portfolio" onclick="closeOffcanvas()">Work</a>
+        <a href="index.html#process" onclick="closeOffcanvas()">Process</a>
+        <a href="index.html#pricing" onclick="closeOffcanvas()">Pricing</a>
+        <a href="index.html#about" onclick="closeOffcanvas()">About</a>
+        <a href="index.html#blog" onclick="closeOffcanvas()">Blog</a>
+        <a href="index.html#contact" onclick="closeOffcanvas()">Contact</a>
+    </nav>
+    <div class="offcanvas-footer">
+        <button class="btn-glow w-100 justify-content-center" onclick="openModal('projectModal'); closeOffcanvas()">
+            <i class="fas fa-rocket"></i> Start Project
+        </button>
+    </div>
+</div>
+
+<!-- Loading State -->
+<div id="loadingState" class="loading">
+    <i class="fas fa-spinner"></i>
+    <p>Loading blog post...</p>
+</div>
+
+<!-- Blog Content (Will be populated by JavaScript) -->
+<div id="blogContent" style="display: none;">
+
+<!-- Hero Section -->
+<section class="blog-hero">
+    <div class="container">
+        <span id="blogTag" class="blog-tag">Loading...</span>
+        <h1 id="blogTitle" class="blog-title">Loading Blog Post...</h1>
+        <div id="blogMeta" class="blog-meta">
+            <span><i class="fas fa-calendar-alt"></i> Loading...</span>
+            <span><i class="fas fa-clock"></i> Loading...</span>
+            <span><i class="fas fa-user"></i> CraftNix Digital</span>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="blog-content">
+    <div class="container">
+        <img id="blogImage" class="blog-image" src="" alt="Blog Post Image">
+
+        <div id="blogText" class="blog-text">
+            <!-- Content will be inserted here -->
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+            <div class="author-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="author-info">
+                <h4>CraftNix Digital</h4>
+                <p>We are a creative digital agency specializing in UI/UX design, branding, and web development. Our team of experts delivers innovative solutions that drive business growth.</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div id="blogNavigation" class="blog-navigation">
+            <!-- Navigation links will be inserted here -->
+        </div>
+
+        <!-- Related Posts -->
+        <div class="related-posts">
+            <h3>You Might Also Like</h3>
+            <div id="relatedPosts" class="related-grid">
+                <!-- Related posts will be inserted here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<!-- Start Project Modal -->
+<div class="custom-modal-overlay" id="projectModal">
+    <div class="custom-modal">
+        <button class="modal-close" onclick="closeModal('projectModal')">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-badge">🚀 LET'S BUILD</div>
+        <h3>Start Your Project</h3>
+        <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+        <form id="projectStartForm">
+            <div class="form-group-custom">
+                <input type="text" class="form-input" placeholder="Your Name" required>
+            </div>
+            <div class="form-group-custom">
+                <input type="email" class="form-input" placeholder="Your Email" required>
+            </div>
+            <div class="form-group-custom">
+                <select class="form-input" required>
+                    <option value="">Select Service</option>
+                    <option value="ui-ux">UI/UX Design</option>
+                    <option value="branding">Branding</option>
+                    <option value="web">Website Design</option>
+                    <option value="growth">Digital Growth</option>
+                </select>
+            </div>
+            <div class="form-group-custom">
+                <select class="form-input">
+                    <option value="">Select Budget Range</option>
+                    <option value="1k-5k">$1,000 - $5,000</option>
+                    <option value="5k-15k">$5,000 - $15,000</option>
+                    <option value="15k+">$15,000+</option>
+                </select>
+            </div>
+            <div class="form-group-custom">
+                <textarea class="form-input" rows="3" placeholder="Brief project description..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-glow w-100">
+                <i class="fas fa-rocket"></i>
+                Submit Project
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-top row g-4">
+            
+            <div class="col-lg-4">
+                <div class="footer-brand">
+                    <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="footer-logo">
+                </div>
+                
+                <p class="footer-desc">
+                    We create digital experiences that drive results. Your success is our mission.
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="footer-heading">Services</h6>
+                <ul class="footer-links">
+                    <li><a href="#services">UI/UX Design</a></li>
+                    <li><a href="#services">Branding</a></li>
+                    <li><a href="#services">Web Design</a></li>
+                    <li><a href="#services">Digital Growth</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="footer-heading">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin-login.html">Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h6 class="footer-heading">Newsletter</h6>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Get design tips and insights weekly.
+                </p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="form-input">
+                    <button class="btn btn-glow btn-sm">Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2026 Craftnix Digital. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <a href="terms.html" target="_blank">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+// Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.offsetHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.getElementById('scrollBar').style.width = scrollPercent + '%';
+});
+
+// Blog Post System with Firebase
+class BlogPostManager {
+    constructor() {
+        this.db = firebase.firestore();
+        this.urlParams = new URLSearchParams(window.location.search);
+        this.postId = this.urlParams.get('id');
+        this.loadingState = document.getElementById('loadingState');
+        this.blogContent = document.getElementById('blogContent');
+        this.init();
+    }
+
+    async init() {
+        if (!this.postId) {
+            this.showError('No blog post ID provided');
+            return;
+        }
+
+        try {
+            await this.loadBlogPost();
+        } catch (error) {
+            console.error('Error loading blog post:', error);
+            this.showFallbackPost();
+        }
+    }
+
+    async loadBlogPost() {
+        try {
+            console.log(`📖 Loading blog post: ${this.postId}`);
+            const doc = await this.db.collection('blogs').doc(this.postId).get();
+
+            if (!doc.exists) {
+                console.warn(`⚠️ Blog post "${this.postId}" not found in database`);
+                this.showError('Blog post not found');
+                return;
+            }
+
+            const blogData = { id: doc.id, ...doc.data() };
+            console.log('✅ Blog post loaded:', blogData.title);
+            this.renderBlogPost(blogData);
+            await this.loadRelatedPosts(blogData.category);
+
+        } catch (error) {
+            console.error('❌ Error loading blog post:', error);
+            this.showFallbackPost();
+        }
+    }
+
+    renderBlogPost(blog) {
+        // Update meta tags
+        document.title = `${blog.title} | CraftNix Digital`;
+        this.updateMetaTag('description', blog.excerpt || blog.content?.substring(0, 160));
+        this.updateMetaTag('og:title', blog.title);
+        this.updateMetaTag('og:description', blog.excerpt || blog.content?.substring(0, 160));
+
+        // Update content
+        document.getElementById('blogTag').textContent = blog.category || 'General';
+        document.getElementById('blogTitle').textContent = blog.title;
+
+        let date = 'January 1, 2024';
+        if (blog.createdAt) {
+            try {
+                // Handle Firestore Timestamp
+                const dateObj = typeof blog.createdAt.toDate === 'function' 
+                    ? blog.createdAt.toDate() 
+                    : new Date(blog.createdAt);
+                date = dateObj.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            } catch (error) {
+                console.error('Date parsing error:', error);
+            }
+        }
+
+        document.getElementById('blogMeta').innerHTML = `
+            <span><i class="fas fa-calendar-alt"></i> ${date}</span>
+            <span><i class="fas fa-clock"></i> ${blog.readTime || '5'} min read</span>
+            <span><i class="fas fa-user"></i> CraftNix Digital</span>
+        `;
+
+        document.getElementById('blogImage').src = blog.image || 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?q=80&w=2070&auto=format&fit=crop';
+        document.getElementById('blogImage').alt = blog.title;
+
+        document.getElementById('blogText').innerHTML = this.formatContent(blog.content || blog.excerpt);
+
+        // Show content and hide loading
+        this.loadingState.style.display = 'none';
+        this.blogContent.style.display = 'block';
+
+        // Add fade-in animation
+        this.blogContent.classList.add('fade-in');
+    }
+
+    formatContent(content) {
+        if (!content) return '<p>Content not available.</p>';
+
+        // Basic HTML formatting - you can enhance this based on your content structure
+        return content
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>')
+            .replace(/^/, '<p>')
+            .replace(/$/, '</p>');
+    }
+
+    async loadRelatedPosts(category) {
+        try {
+            const relatedRef = this.db.collection('blogs')
+                .where('category', '==', category)
+                .limit(3);
+            const snapshot = await relatedRef.get();
+
+            const relatedPosts = [];
+            snapshot.forEach(doc => {
+                const data = { id: doc.id, ...doc.data() };
+                if (data.id !== this.postId) {
+                    relatedPosts.push(data);
+                }
+            });
+
+            this.renderRelatedPosts(relatedPosts);
+        } catch (error) {
+            console.error('Error loading related posts:', error);
+        }
+    }
+
+    renderRelatedPosts(posts) {
+        const container = document.getElementById('relatedPosts');
+
+        if (posts.length === 0) {
+            container.innerHTML = '<p>No related posts found.</p>';
+            return;
+        }
+
+        container.innerHTML = posts.map(post => `
+            <a href="blog-post.html?id=${post.id}" class="related-card">
+                <img src="${post.image || 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?q=80&w=2070&auto=format&fit=crop'}" alt="${post.title}">
+                <div class="related-card-body">
+                    <h4>${post.title}</h4>
+                    <p>${post.excerpt || post.content?.substring(0, 100) + '...'}</p>
+                    <span class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    updateMetaTag(name, content) {
+        let meta = document.querySelector(`meta[name="${name}"]`);
+        if (!meta) {
+            meta = document.querySelector(`meta[property="${name}"]`);
+        }
+        if (meta) {
+            meta.setAttribute('content', content);
+        }
+    }
+
+    showError(message) {
+        this.loadingState.innerHTML = `
+            <i class="fas fa-exclamation-triangle" style="color: var(--orange);"></i>
+            <h3>Error Loading Post</h3>
+            <p>${message}</p>
+            <a href="blog.html" style="color: var(--purple); margin-top: 1rem; display: inline-block;">← Back to Blog</a>
+        `;
+    }
+
+    showFallbackPost() {
+        // Show a sample post if database fails
+        const fallbackPost = {
+            title: '10 UI Principles Every Designer Must Know',
+            category: 'UI/UX',
+            readTime: '5 min',
+            image: 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?q=80&w=2070&auto=format&fit=crop',
+            content: `
+                <p>Design principles are the foundation of great user interfaces. Understanding and applying these principles can transform your designs from good to exceptional.</p>
+
+                <h2>1. Hierarchy</h2>
+                <p>Visual hierarchy guides users through your interface. Use size, color, and spacing to establish clear relationships between elements.</p>
+
+                <h2>2. Consistency</h2>
+                <p>Maintain consistent patterns throughout your design. This includes typography, colors, spacing, and interaction patterns.</p>
+
+                <h2>3. Alignment</h2>
+                <p>Proper alignment creates order and makes your designs look professional. Everything should have a reason to be positioned where it is.</p>
+
+                <h2>4. Proximity</h2>
+                <p>Group related elements together and separate unrelated ones. This helps users understand relationships between different parts of your interface.</p>
+
+                <h2>5. Contrast</h2>
+                <p>Use contrast to create focus and guide attention. This applies to colors, sizes, and typography.</p>
+
+                <p>Mastering these principles takes time and practice, but they're essential for creating interfaces that users love to interact with.</p>
+            `
+        };
+
+        this.renderBlogPost(fallbackPost);
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new BlogPostManager();
+});
+</script>
+
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

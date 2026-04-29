@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Cookie Policy | CraftNix Digital — Design, Build, Empower</title>
+    <meta name="description" content="CraftNix Digital's Cookie Policy. Learn how we use cookies and similar technologies to enhance your browsing experience.">
+    <meta name="keywords" content="CraftNix Digital cookie policy, cookies, tracking technologies, privacy">
+    <meta name="author" content="CraftNix Digital">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://craftnix13.github.io/craftnix-digital/cookie-policy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cookie Policy | CraftNix Digital">
+    <meta property="og:description" content="How CraftNix Digital uses cookies to improve your website experience.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craftnix13.github.io/craftnix-digital/cookie-policy.html">
+    <meta property="og:site_name" content="CraftNix Digital">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Files -->
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        
+        /* Hero */
+        .page-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, rgba(123,63,228,0.08) 0%, transparent 60%);
+            position: relative; overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute; top: -200px; right: -100px;
+            width: 500px; height: 500px;
+            background: rgba(123,63,228,0.12);
+            border-radius: 50%; filter: blur(80px); pointer-events: none;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+        .page-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            background: rgba(123,63,228,0.1);
+            border: 1px solid rgba(123,63,228,0.3);
+            border-radius: 50px; color: var(--purple);
+            font-size: 0.78rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+        }
+
+        .page-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900; line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--purple), var(--orange));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-meta {
+            display: flex; align-items: center; gap: 1.5rem;
+            flex-wrap: wrap; margin-top: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+
+        .meta-item i { color: var(--purple); }
+
+        /* Content */
+        .content-wrap { padding: 4rem 0 6rem; }
+
+        /* TOC */
+        .toc-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: var(--radius); padding: 1.8rem;
+            margin-bottom: 3rem; position: sticky; top: 80px;
+        }
+
+        .toc-title {
+            font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--purple); margin-bottom: 1rem;
+        }
+
+        .toc-list { list-style: none; }
+
+        .toc-list li { margin-bottom: 0.5rem; }
+
+        .toc-list a {
+            color: var(--text-muted); font-size: 0.88rem;
+            transition: var(--transition); display: flex; align-items: center; gap: 0.5rem;
+        }
+
+        .toc-list a::before {
+            content: '→'; color: var(--orange); font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .toc-list a:hover { color: var(--text-white); }
+        .toc-list a:hover::before { transform: translateX(4px); }
+
+        .layout-grid {
+            display: block; grid-template-columns: 280px 1fr; gap: 3rem;
+            align-items: start;
+        }
+
+        /* Sections */
+        .policy-section {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .policy-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+        .section-num {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple), var(--orange));
+            color: white; font-size: 0.72rem; font-weight: 700;
+            padding: 0.2rem 0.7rem; border-radius: 50px;
+            margin-bottom: 0.75rem; letter-spacing: 1px;
+        }
+
+        .section-heading {
+            font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+
+        .section-heading i { color: var(--purple); font-size: 1.1rem; }
+
+        .policy-text {
+            color: var(--text-light); line-height: 1.85;
+            font-size: 0.95rem; margin-bottom: 1rem;
+        }
+
+        .policy-list {
+            list-style: none; margin: 1rem 0;
+        }
+
+        .policy-list li {
+            color: var(--text-light); font-size: 0.92rem;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            position: relative; border-bottom: 1px solid rgba(255,255,255,0.04);
+            line-height: 1.7;
+        }
+
+        .policy-list li::before {
+            content: '▸'; position: absolute; left: 0;
+            color: var(--orange);
+        }
+
+        .highlight-box {
+            background: rgba(123,63,228,0.08);
+            border: 1px solid rgba(123,63,228,0.2);
+            border-left: 3px solid var(--purple);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem; margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-light); font-size: 0.92rem;
+            line-height: 1.8; margin: 0;
+        }
+
+        .highlight-box strong { color: var(--text-white); }
+
+        .info-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1rem; margin: 1.5rem 0;
+        }
+
+        .info-tile {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 12px; padding: 1.2rem;
+        }
+
+        .info-tile h5 {
+            font-size: 0.8rem; color: var(--purple); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;
+        }
+
+        .info-tile p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(123,63,228,0.1), rgba(255,140,47,0.05));
+            border: 1px solid rgba(123,63,228,0.25);
+            border-radius: var(--radius); padding: 2rem; margin-top: 2rem;
+        }
+
+        .contact-card h4 { font-size: 1.1rem; margin-bottom: 1rem; }
+
+        .contact-item {
+            display: flex; align-items: center; gap: 0.75rem;
+            padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .contact-item:last-child { border-bottom: none; }
+        .contact-item i { color: var(--purple); width: 20px; }
+        .contact-item a { color: var(--orange); }
+        .contact-item a:hover { text-decoration: underline; }
+
+        
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .layout-grid { grid-template-columns: 1fr; }
+            .toc-card { position: static; }
+            .info-grid { grid-template-columns: 1fr; }
+            .nav-links, .btn-nav { display: none; }
+            .hamburger { display: flex; }
+        }
+
+        @media (max-width: 600px) {
+            .page-hero { padding: 120px 0 40px; }
+            .content-wrap { padding: 2rem 0 4rem; }
+            .section-heading { font-size: 1.2rem; }
+        }
+
+        /* Fade in */
+        .fade-in {
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+
+
+<!-- ========================================
+     PAGE LOADER
+     ======================================== -->
+<div id="pageLoader">
+    <div class="loader-logo"><img src="assets/images/loader-craftnix.png"></div>
+    <div class="loader-bar">
+        <div class="loader-bar-fill"></div>
+    </div>
+</div>
+
+
+<!-- ========================================
+     SCROLL PROGRESS BAR (Top)
+     ======================================== -->
+<div id="scrollProgressBar"></div>
+
+<!-- ========================================
+     THEME TOGGLE BUTTON
+     ======================================== -->
+<button id="themeToggle" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+</button>
+
+<!-- ========================================
+     NAVBAR
+     ======================================== -->
+<!-- NAVBAR -->
+<nav class="navbar fixed-top" id="mainNavbar">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="index.html#home">
+            <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="nav-logo">
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="navbar-nav-desktop d-none d-lg-flex align-items-center gap-1 mb-0">
+            <li><a class="nav-link" href="index.html#services">Services</a></li>
+            <li><a class="nav-link" href="index.html#portfolio">Work</a></li>
+            <li><a class="nav-link" href="index.html#process">Process</a></li>
+            <li><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+            <li><a class="nav-link" href="index.html#about">About</a></li>
+            <li><a class="nav-link" href="index.html#blog">Blog</a></li>
+            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-glow d-none d-lg-inline-flex" onclick="openModal('projectModal')">
+                <i class="fas fa-rocket"></i> Start Project
+            </button>
+            <!-- Mobile Hamburger -->
+            <button class="offcanvas-toggle-btn d-lg-none" onclick="openOffcanvas()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+    </div>
+</nav>
+
+<!-- ========== OFFCANVAS OVERLAY ========== -->
+<div class="offcanvas-overlay" id="offcanvasOverlay" onclick="closeOffcanvas()"></div>
+
+<!-- ========== OFFCANVAS PANEL ========== -->
+<div class="offcanvas-panel" id="offcanvasPanel">
+    <div class="offcanvas-header">
+        <img src="assets/images/craftnix_logo.png" alt="CraftNix" class="offcanvas-logo">
+        <button class="offcanvas-close-btn" onclick="closeOffcanvas()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <nav class="offcanvas-nav">
+        <a href="index.html#services" onclick="closeOffcanvas()">Services</a>
+        <a href="index.html#portfolio" onclick="closeOffcanvas()">Work</a>
+        <a href="index.html#process" onclick="closeOffcanvas()">Process</a>
+        <a href="index.html#pricing" onclick="closeOffcanvas()">Pricing</a>
+        <a href="index.html#about" onclick="closeOffcanvas()">About</a>
+        <a href="index.html#blog" onclick="closeOffcanvas()">Blog</a>
+        <a href="index.html#contact" onclick="closeOffcanvas()">Contact</a>
+    </nav>
+    <div class="offcanvas-footer">
+        <button class="btn-glow w-100 justify-content-center" onclick="openModal('projectModal'); closeOffcanvas()">
+            <i class="fas fa-rocket"></i> Start Project
+        </button>
+    </div>
+</div>
+
+<!-- Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="fade-in">
+            <span class="page-badge"><i class="fas fa-cookie-bite"></i> Legal</span>
+        </div>
+        <h1 class="page-title fade-in">
+            Cookie <span class="text-gradient">Policy</span>
+        </h1>
+        <p class="policy-text fade-in" style="max-width:600px; margin-top:0.5rem;">
+            This Cookie Policy explains how CraftNix Digital uses cookies and similar technologies to enhance your browsing experience on our website.
+        </p>
+        <div class="page-meta">
+            <div class="meta-item"><i class="fas fa-calendar"></i> Effective: January 1, 2025</div>
+            <div class="meta-item"><i class="fas fa-sync-alt"></i> Last Updated: April 2025</div>
+            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Governed by Indian Law</div>
+        </div>
+    </div>
+</section>
+
+<!-- Content -->
+<section class="content-wrap">
+    <div class="container">
+        <div class="layout-grid">
+
+            <!-- TOC Sidebar -->
+            <aside>
+                <div class="toc-card">
+                    <div class="toc-title"><i class="fas fa-list"></i> Contents</div>
+                    <ul class="toc-list">
+                        <li><a href="#what-cookies">What Are Cookies</a></li>
+                        <li><a href="#types-cookies">Types of Cookies We Use</a></li>
+                        <li><a href="#how-use-cookies">How We Use Cookies</a></li>
+                        <li><a href="#third-party-cookies">Third-Party Cookies</a></li>
+                        <li><a href="#managing-cookies">Managing Cookies</a></li>
+                        <li><a href="#cookie-consent">Your Consent</a></li>
+                        <li><a href="#updates">Policy Updates</a></li>
+                        <li><a href="#contact-cookie">Contact Us</a></li>
+                    </ul>
+                    <hr style="border-color:var(--border); margin: 1.2rem 0;">
+                    <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.6;">
+                        Questions? Email us at<br>
+                        <a href="mailto:craftnixdigital@gmail.com" style="color:var(--purple);">craftnixdigital@gmail.com</a>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main>
+
+                <!-- Section 1 -->
+                <div class="policy-section" id="what-cookies">
+                    <span class="section-num">01</span>
+                    <h2 class="section-heading"><i class="fas fa-question-circle"></i> What Are Cookies</h2>
+                    <p class="policy-text">
+                        Cookies are small text files that are stored on your device when you visit our website. They help us provide you with a better browsing experience by remembering your preferences and understanding how you use our site.
+                    </p>
+                    <div class="highlight-box">
+                        <p><strong>Key Points:</strong> Cookies are not harmful and cannot access your personal files. They only store information that you provide or that is collected during your website interaction.</p>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="policy-section" id="types-cookies">
+                    <span class="section-num">02</span>
+                    <h2 class="section-heading"><i class="fas fa-layer-group"></i> Types of Cookies We Use</h2>
+                    <p class="policy-text">
+                        We use different types of cookies for various purposes. Here's a breakdown of the cookies we may use on our website:
+                    </p>
+                    <div class="info-grid">
+                        <div class="info-tile">
+                            <h5><i class="fas fa-clock"></i> Essential Cookies</h5>
+                            <p>These cookies are necessary for the website to function properly. They enable basic features like page navigation and access to secure areas.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-chart-line"></i> Analytics Cookies</h5>
+                            <p>Help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-cogs"></i> Functional Cookies</h5>
+                            <p>Remember your preferences and settings to provide enhanced features and personalized content.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-ad"></i> Marketing Cookies</h5>
+                            <p>Used to deliver relevant advertisements and track the effectiveness of our marketing campaigns.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="policy-section" id="how-use-cookies">
+                    <span class="section-num">03</span>
+                    <h2 class="section-heading"><i class="fas fa-tasks"></i> How We Use Cookies</h2>
+                    <p class="policy-text">
+                        Cookies help us improve your experience on our website in several ways:
+                    </p>
+                    <ul class="policy-list">
+                        <li>Remember your login status and preferences</li>
+                        <li>Analyze website traffic and user behavior</li>
+                        <li>Provide personalized content and recommendations</li>
+                        <li>Ensure website security and prevent fraud</li>
+                        <li>Remember items in your shopping cart (if applicable)</li>
+                        <li>Display relevant advertisements</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="policy-section" id="third-party-cookies">
+                    <span class="section-num">04</span>
+                    <h2 class="section-heading"><i class="fas fa-external-link-alt"></i> Third-Party Cookies</h2>
+                    <p class="policy-text">
+                        We may use third-party services that set their own cookies. These include:
+                    </p>
+                    <ul class="policy-list">
+                        <li><strong>Google Analytics:</strong> For website analytics and performance monitoring</li>
+                        <li><strong>Social Media Plugins:</strong> To enable sharing and social media integration</li>
+                        <li><strong>Payment Processors:</strong> For secure payment processing (if applicable)</li>
+                        <li><strong>Content Delivery Networks:</strong> To improve website loading speed</li>
+                    </ul>
+                    <p class="policy-text">
+                        These third parties have their own privacy policies and cookie practices. We recommend reviewing their policies for more information.
+                    </p>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="policy-section" id="managing-cookies">
+                    <span class="section-num">05</span>
+                    <h2 class="section-heading"><i class="fas fa-sliders-h"></i> Managing Cookies</h2>
+                    <p class="policy-text">
+                        You have control over cookies. Here's how you can manage them:
+                    </p>
+                    <div class="info-grid">
+                        <div class="info-tile">
+                            <h5><i class="fas fa-browser"></i> Browser Settings</h5>
+                            <p>Most web browsers allow you to control cookies through their settings. You can block or delete cookies, but this may affect website functionality.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-cookie-bite"></i> Cookie Banner</h5>
+                            <p>Use our cookie consent banner to accept or reject non-essential cookies when you first visit our site.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-optin-monster"></i> Opt-Out Links</h5>
+                            <p>Follow opt-out links provided by third-party services to stop receiving their cookies.</p>
+                        </div>
+                        <div class="info-tile">
+                            <h5><i class="fas fa-mobile-alt"></i> Mobile Devices</h5>
+                            <p>Manage cookies through your mobile browser settings or device privacy options.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="policy-section" id="cookie-consent">
+                    <span class="section-num">06</span>
+                    <h2 class="section-heading"><i class="fas fa-check-circle"></i> Your Consent</h2>
+                    <p class="policy-text">
+                        By using our website, you consent to the use of cookies in accordance with this policy. You can withdraw your consent at any time by adjusting your browser settings or using our cookie management tools.
+                    </p>
+                    <div class="highlight-box">
+                        <p><strong>Important:</strong> Essential cookies do not require consent as they are necessary for the website to function. Non-essential cookies require your explicit consent.</p>
+                    </div>
+                </div>
+
+                <!-- Section 7 -->
+                <div class="policy-section" id="updates">
+                    <span class="section-num">07</span>
+                    <h2 class="section-heading"><i class="fas fa-sync-alt"></i> Policy Updates</h2>
+                    <p class="policy-text">
+                        We may update this Cookie Policy from time to time to reflect changes in our practices or for legal reasons. We will notify you of any significant changes by posting the updated policy on our website.
+                    </p>
+                    <p class="policy-text">
+                        We recommend checking this page periodically to stay informed about our cookie practices.
+                    </p>
+                </div>
+
+                <!-- Section 8 -->
+                <div class="policy-section" id="contact-cookie">
+                    <span class="section-num">08</span>
+                    <h2 class="section-heading"><i class="fas fa-envelope"></i> Contact Us</h2>
+                    <div class="contact-card">
+                        <h4>Questions About Cookies?</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong> <a href="mailto:craftnixdigital@gmail.com">craftnixdigital@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address:</strong> Mumbai, Maharashtra, India
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</section>
+<!-- Start Project Modal -->
+<div class="custom-modal-overlay" id="projectModal">
+    <div class="custom-modal">
+        <button class="modal-close" onclick="closeModal('projectModal')">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-badge">🚀 LET'S BUILD</div>
+        <h3>Start Your Project</h3>
+        <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+        <form id="projectStartForm">
+            <div class="form-group-custom">
+                <input type="text" class="form-input" placeholder="Your Name" required>
+            </div>
+            <div class="form-group-custom">
+                <input type="email" class="form-input" placeholder="Your Email" required>
+            </div>
+            <div class="form-group-custom">
+                <select class="form-input" required>
+                    <option value="">Select Service</option>
+                    <option value="ui-ux">UI/UX Design</option>
+                    <option value="branding">Branding</option>
+                    <option value="web">Website Design</option>
+                    <option value="growth">Digital Growth</option>
+                </select>
+            </div>
+            <div class="form-group-custom">
+                <select class="form-input">
+                    <option value="">Select Budget Range</option>
+                    <option value="1k-5k">$1,000 - $5,000</option>
+                    <option value="5k-15k">$5,000 - $15,000</option>
+                    <option value="15k+">$15,000+</option>
+                </select>
+            </div>
+            <div class="form-group-custom">
+                <textarea class="form-input" rows="3" placeholder="Brief project description..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-glow w-100">
+                <i class="fas fa-rocket"></i>
+                Submit Project
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-top row g-4">
+            
+            <div class="col-lg-4">
+                <div class="footer-brand">
+                    <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="footer-logo">
+                </div>
+                
+                <p class="footer-desc">
+                    We create digital experiences that drive results. Your success is our mission.
+                </p>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="footer-heading">Services</h6>
+                <ul class="footer-links">
+                    <li><a href="#services">UI/UX Design</a></li>
+                    <li><a href="#services">Branding</a></li>
+                    <li><a href="#services">Web Design</a></li>
+                    <li><a href="#services">Digital Growth</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6 class="footer-heading">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#portfolio">Our Work</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="admin-login.html">Admin</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h6 class="footer-heading">Newsletter</h6>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Get design tips and insights weekly.
+                </p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your email address" class="form-input">
+                    <button class="btn btn-glow btn-sm">Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2026 Craftnix Digital. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <a href="terms.html" target="_blank">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        document.getElementById('scrollBar').style.width = Math.min(progress, 100) + '%';
+    }, { passive: true });
+</script>
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/utils.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
