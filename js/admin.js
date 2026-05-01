@@ -73,8 +73,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 target.classList.add('visible');
                 window.location.hash = sectionId;
             }
+
+            // Close sidebar on mobile after click
+            if (window.innerWidth <= 1024) {
+                closeSidebar();
+            }
         });
     });
+
+    // Mobile Sidebar Toggle
+    const sidebar = document.getElementById('adminSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const closeBtn = document.getElementById('sidebarClose');
+
+    function openSidebar() {
+        sidebar?.classList.add('active');
+        overlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSidebar() {
+        sidebar?.classList.remove('active');
+        overlay?.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    toggleBtn?.addEventListener('click', openSidebar);
+    closeBtn?.addEventListener('click', closeSidebar);
+    overlay?.addEventListener('click', closeSidebar);
 
     const hash = window.location.hash.substring(1) || 'projects';
     const initialLink = document.querySelector(`.sidebar-link[data-section="${hash}"]`);
