@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
     <title>Blog | Craftnix Digital | Web Design & Development Agency in Mumbai, Nallasopara</title>
-    <meta name="description" content="Read our latest blog posts on UI/UX design, branding, digital marketing, and web development. Insights and tips from CraftNix Digital.">
+    <meta name="description"
+        content="Read our latest blog posts on UI/UX design, branding, digital marketing, and web development. Insights and tips from CraftNix Digital.">
     <meta name="keywords" content="blog, UI/UX design, branding, digital marketing, web development, CraftNix Digital">
     <meta name="author" content="CraftNix Digital">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://craftnixdigital.online/blog.html">
-   <!-- Canonical URL -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://craftnixdigital.online/blog.html">
     <!-- Google Verification -->
-<meta name="google-site-verification" content="6-V88FepyYYlTcREVZJym8dvhQWogs1c6108GgBm380" />
-    
+    <meta name="google-site-verification" content="6-V88FepyYYlTcREVZJym8dvhQWogs1c6108GgBm380" />
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://craftnixdigital.online/">
     <meta property="og:title" content="Craftnix Digital | Web Design & Development Agency in Mumbai, Nallasopara">
-    <meta property="og:description" content="We design & build stunning digital experiences for businesses across India. UI/UX, Branding, Web Development & more. Based in Nallasopara, Mumbai.">
+    <meta property="og:description"
+        content="We design & build stunning digital experiences for businesses across India. UI/UX, Branding, Web Development & more. Based in Nallasopara, Mumbai.">
     <meta property="og:image" content="https://craftnixdigital.online/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -27,27 +30,29 @@
     <meta property="og:site_name" content="Craftnix Digital">
     <meta property="og:locale" content="en_IN">
 
-    
-     <!-- Favicon -->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2YMWCES11"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2YMWCES11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-Q2YMWCES11');
-</script>
+        gtag('config', 'G-Q2YMWCES11');
+    </script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
@@ -63,117 +68,179 @@
         /* Hero */
         .page-hero {
             padding: 60px 0 60px;
-            background: linear-gradient(135deg, rgba(123,63,228,0.08) 0%, transparent 60%);
-            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, rgba(123, 63, 228, 0.08) 0%, transparent 60%);
+            position: relative;
+            overflow: hidden;
             border-bottom: 1px solid var(--border);
         }
 
         .page-hero::before {
             content: '';
-            position: absolute; top: -200px; right: -100px;
-            width: 500px; height: 500px;
-            background: rgba(123,63,228,0.12);
-            border-radius: 50%; filter: blur(80px); pointer-events: none;
+            position: absolute;
+            top: -200px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: rgba(123, 63, 228, 0.12);
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
         .page-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             padding: 0.4rem 1.2rem;
-            background: rgba(123,63,228,0.1);
-            border: 1px solid rgba(123,63,228,0.3);
-            border-radius: 50px; color: var(--purple);
-            font-size: 0.78rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px;
+            background: rgba(123, 63, 228, 0.1);
+            border: 1px solid rgba(123, 63, 228, 0.3);
+            border-radius: 50px;
+            color: var(--purple);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1.2rem;
         }
 
         .page-title {
             font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 900; line-height: 1.15;
+            font-weight: 900;
+            line-height: 1.15;
             margin-bottom: 1rem;
         }
 
         .text-gradient {
             background: linear-gradient(135deg, var(--purple), var(--orange));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .page-meta {
-            display: flex; align-items: center; gap: 1.5rem;
-            flex-wrap: wrap; margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
 
         .meta-item {
-            display: flex; align-items: center; gap: 0.5rem;
-            font-size: 0.85rem; color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
-        .meta-item i { color: var(--purple); }
+        .meta-item i {
+            color: var(--purple);
+        }
 
         /* Blog Grid */
-        .blog-section { padding: 4rem 0 6rem; }
+        .blog-section {
+            padding: 4rem 0 6rem;
+        }
 
         .blog-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem; margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .blog-card {
-            background: var(--glass); border: 1px solid var(--glass-border);
-            border-radius: var(--radius); overflow: hidden;
-            transition: var(--transition); position: relative;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
         }
 
         .blog-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(123,63,228,0.3);
-            box-shadow: 0 20px 40px rgba(123,63,228,0.1);
+            border-color: rgba(123, 63, 228, 0.3);
+            box-shadow: 0 20px 40px rgba(123, 63, 228, 0.1);
         }
 
         .blog-img-wrap {
-            position: relative; overflow: hidden; height: 200px;
+            position: relative;
+            overflow: hidden;
+            height: 200px;
         }
 
         .blog-img-wrap img {
-            width: 100%; height: 100%; object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: var(--transition);
         }
 
-        .blog-card:hover .blog-img-wrap img { transform: scale(1.05); }
+        .blog-card:hover .blog-img-wrap img {
+            transform: scale(1.05);
+        }
 
         .blog-tag {
-            position: absolute; top: 1rem; left: 1rem;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
             background: linear-gradient(135deg, var(--purple), var(--orange));
-            color: white; padding: 0.3rem 0.8rem; border-radius: 20px;
-            font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .blog-body { padding: 1.5rem; }
-
-        .blog-meta {
-            display: flex; align-items: center; gap: 1rem;
-            font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;
+        .blog-body {
+            padding: 1.5rem;
         }
 
-        .blog-meta span { display: flex; align-items: center; gap: 0.3rem; }
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
 
         .blog-body h3 {
-            font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
             line-height: 1.4;
         }
 
         .blog-body p {
-            color: var(--text-light); font-size: 0.9rem;
-            line-height: 1.6; margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         .blog-read-more {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            color: var(--orange); font-weight: 600; font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
@@ -188,23 +255,31 @@
 
         /* Loading */
         .loading {
-            text-align: center; padding: 3rem;
+            text-align: center;
+            padding: 3rem;
             color: var(--text-muted);
         }
 
         .loading i {
-            font-size: 2rem; margin-bottom: 1rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
             animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* No posts */
         .no-posts {
-            text-align: center; padding: 3rem;
+            text-align: center;
+            padding: 3rem;
             color: var(--text-muted);
         }
 
@@ -215,395 +290,439 @@
             text-align: center;
         }
 
-        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
         .footer-links-row {
-            display: flex; justify-content: center; gap: 2rem;
-            flex-wrap: wrap; margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links-row a {
-            color: var(--text-muted); font-size: 0.88rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
             transition: var(--transition);
         }
 
-        .footer-links-row a:hover { color: var(--purple); }
-        .footer-links-row a.active-page { color: var(--purple); font-weight: 600; }
+        .footer-links-row a:hover {
+            color: var(--purple);
+        }
 
-        .footer-copy { color: var(--text-muted); font-size: 0.82rem; }
+        .footer-links-row a.active-page {
+            color: var(--purple);
+            font-weight: 600;
+        }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .blog-grid { grid-template-columns: 1fr; }
-            .nav-links, .btn-nav { display: none; }
-            .hamburger { display: flex; }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links,
+            .btn-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
         }
 
         /* Fade in */
         .fade-in {
-            opacity: 0; transform: translateY(20px);
+            opacity: 0;
+            transform: translateY(20px);
             animation: fadeUp 0.6s ease forwards;
         }
 
         @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.2s; }
-        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .fade-in:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in:nth-child(3) {
+            animation-delay: 0.3s;
+        }
     </style>
 </head>
+
 <body>
 
-<!-- ========================================
+    <!-- ========================================
      PAGE LOADER
      ======================================== -->
-<div id="pageLoader">
-    <div class="loader-logo"><img src="assets/images/loader-craftnix.png"></div>
-    <div class="loader-bar">
-        <div class="loader-bar-fill"></div>
+    <div id="pageLoader">
+        <div class="loader-logo"><img src="assets/images/loader-craftnix.png"></div>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
-</div>
 
 
-<!-- ========================================
+    <!-- ========================================
      SCROLL PROGRESS BAR (Top)
      ======================================== -->
-<div id="scrollProgressBar"></div>
+    <div id="scrollProgressBar"></div>
 
-<!-- ========================================
+    <!-- ========================================
      THEME TOGGLE BUTTON
      ======================================== -->
-<button id="themeToggle" title="Toggle Theme">
-    <i class="fas fa-moon"></i>
-</button>
+    <button id="themeToggle" title="Toggle Theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
-<!-- ========================================
+    <!-- ========================================
      NAVBAR
      ======================================== -->
-<!-- NAVBAR -->
-<nav class="navbar fixed-top" id="mainNavbar">
-    <div class="container d-flex align-items-center justify-content-between">
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top" id="mainNavbar">
+        <div class="container d-flex align-items-center justify-content-between">
 
-        <!-- Logo -->
-        <a class="navbar-brand" href="index.html#home">
-            <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="nav-logo">
-        </a>
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html#home">
+                <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="nav-logo">
+            </a>
 
-        <!-- Desktop Nav Links -->
-        <ul class="navbar-nav-desktop d-none d-lg-flex align-items-center gap-1 mb-0">
-            <li><a class="nav-link" href="index.html#services">Services</a></li>
-            <li><a class="nav-link" href="index.html#portfolio">Work</a></li>
-            <li><a class="nav-link" href="index.html#process">Process</a></li>
-            <li><a class="nav-link" href="index.html#pricing">Pricing</a></li>
-            <li><a class="nav-link" href="index.html#about">About</a></li>
-            <li><a class="nav-link" href="index.html#blog">Blog</a></li>
-            <li><a class="nav-link" href="index.html#contact">Contact</a></li>
-        </ul>
+            <!-- Desktop Nav Links -->
+            <ul class="navbar-nav-desktop d-none d-lg-flex align-items-center gap-1 mb-0">
+                <li><a class="nav-link" href="index.html#services">Services</a></li>
+                <li><a class="nav-link" href="index.html#portfolio">Work</a></li>
+                <li><a class="nav-link" href="index.html#process">Process</a></li>
+                <li><a class="nav-link" href="index.html#pricing">Pricing</a></li>
+                <li><a class="nav-link" href="index.html#about">About</a></li>
+                <li><a class="nav-link" href="index.html#blog">Blog</a></li>
+                <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
 
-        <!-- Right Side -->
-        <div class="d-flex align-items-center gap-2">
-            <button class="btn btn-glow d-none d-lg-inline-flex" onclick="openModal('projectModal')">
+            <!-- Right Side -->
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-glow d-none d-lg-inline-flex" onclick="openModal('projectModal')">
+                    <i class="fas fa-rocket"></i> Start Project
+                </button>
+                <!-- Mobile Hamburger -->
+                <button class="offcanvas-toggle-btn d-lg-none" onclick="openOffcanvas()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ========== OFFCANVAS OVERLAY ========== -->
+    <div class="offcanvas-overlay" id="offcanvasOverlay" onclick="closeOffcanvas()"></div>
+
+    <!-- ========== OFFCANVAS PANEL ========== -->
+    <div class="offcanvas-panel" id="offcanvasPanel">
+        <div class="offcanvas-header">
+            <img src="assets/images/craftnix_logo.png" alt="CraftNix" class="offcanvas-logo">
+            <button class="offcanvas-close-btn" onclick="closeOffcanvas()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="offcanvas-nav">
+            <a href="index.html#services" onclick="closeOffcanvas()">Services</a>
+            <a href="index.html#portfolio" onclick="closeOffcanvas()">Work</a>
+            <a href="index.html#process" onclick="closeOffcanvas()">Process</a>
+            <a href="index.html#pricing" onclick="closeOffcanvas()">Pricing</a>
+            <a href="index.html#about" onclick="closeOffcanvas()">About</a>
+            <a href="index.html#blog" onclick="closeOffcanvas()">Blog</a>
+            <a href="index.html#contact" onclick="closeOffcanvas()">Contact</a>
+        </nav>
+        <div class="offcanvas-footer">
+            <button class="btn-glow w-100 justify-content-center" onclick="openModal('projectModal'); closeOffcanvas()">
                 <i class="fas fa-rocket"></i> Start Project
             </button>
-            <!-- Mobile Hamburger -->
-            <button class="offcanvas-toggle-btn d-lg-none" onclick="openOffcanvas()">
-                <i class="fas fa-bars"></i>
+        </div>
+    </div>
+
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="fade-in">
+                <span class="page-badge"><i class="fas fa-blog"></i> Insights</span>
+            </div>
+            <h1 class="page-title fade-in">
+                Our <span class="text-gradient">Blog</span>
+            </h1>
+            <p class="policy-text fade-in" style="max-width:600px; margin-top:0.5rem; color: var(--text-light);">
+                Discover the latest insights, tips, and strategies in UI/UX design, branding, and digital growth.
+            </p>
+            <div class="page-meta">
+                <div class="meta-item"><i class="fas fa-newspaper"></i> Latest Articles</div>
+                <div class="meta-item"><i class="fas fa-clock"></i> Regular Updates</div>
+                <div class="meta-item"><i class="fas fa-users"></i> Expert Insights</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div id="blogContainer">
+                <div class="loading">
+                    <i class="fas fa-spinner"></i>
+                    <p>Loading blog posts...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Start Project Modal -->
+    <div class="custom-modal-overlay" id="projectModal">
+        <div class="custom-modal">
+            <button class="modal-close" onclick="closeModal('projectModal')">
+                <i class="fas fa-times"></i>
             </button>
-        </div>
-
-    </div>
-</nav>
-
-<!-- ========== OFFCANVAS OVERLAY ========== -->
-<div class="offcanvas-overlay" id="offcanvasOverlay" onclick="closeOffcanvas()"></div>
-
-<!-- ========== OFFCANVAS PANEL ========== -->
-<div class="offcanvas-panel" id="offcanvasPanel">
-    <div class="offcanvas-header">
-        <img src="assets/images/craftnix_logo.png" alt="CraftNix" class="offcanvas-logo">
-        <button class="offcanvas-close-btn" onclick="closeOffcanvas()">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-    <nav class="offcanvas-nav">
-        <a href="index.html#services" onclick="closeOffcanvas()">Services</a>
-        <a href="index.html#portfolio" onclick="closeOffcanvas()">Work</a>
-        <a href="index.html#process" onclick="closeOffcanvas()">Process</a>
-        <a href="index.html#pricing" onclick="closeOffcanvas()">Pricing</a>
-        <a href="index.html#about" onclick="closeOffcanvas()">About</a>
-        <a href="index.html#blog" onclick="closeOffcanvas()">Blog</a>
-        <a href="index.html#contact" onclick="closeOffcanvas()">Contact</a>
-    </nav>
-    <div class="offcanvas-footer">
-        <button class="btn-glow w-100 justify-content-center" onclick="openModal('projectModal'); closeOffcanvas()">
-            <i class="fas fa-rocket"></i> Start Project
-        </button>
-    </div>
-</div>
-
-
-<!-- Hero -->
-<section class="page-hero">
-    <div class="container">
-        <div class="fade-in">
-            <span class="page-badge"><i class="fas fa-blog"></i> Insights</span>
-        </div>
-        <h1 class="page-title fade-in">
-            Our <span class="text-gradient">Blog</span>
-        </h1>
-        <p class="policy-text fade-in" style="max-width:600px; margin-top:0.5rem; color: var(--text-light);">
-            Discover the latest insights, tips, and strategies in UI/UX design, branding, and digital growth.
-        </p>
-        <div class="page-meta">
-            <div class="meta-item"><i class="fas fa-newspaper"></i> Latest Articles</div>
-            <div class="meta-item"><i class="fas fa-clock"></i> Regular Updates</div>
-            <div class="meta-item"><i class="fas fa-users"></i> Expert Insights</div>
+            <div class="modal-badge">🚀 LET'S BUILD</div>
+            <h3>Start Your Project</h3>
+            <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+            <form id="projectStartForm">
+                <div class="form-group-custom">
+                    <input type="text" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group-custom">
+                    <input type="email" class="form-input" placeholder="Your Email" required>
+                </div>
+                <div class="form-group-custom">
+                    <select class="form-input" required>
+                        <option value="">Select Service</option>
+                        <option value="ui-ux">UI/UX Design</option>
+                        <option value="branding">Branding</option>
+                        <option value="web">Website Design</option>
+                        <option value="growth">Digital Growth</option>
+                    </select>
+                </div>
+                <div class="form-group-custom">
+                    <select class="form-input">
+                        <option value="">Select Budget Range</option>
+                        <option value="1k-5k">$1,000 - $5,000</option>
+                        <option value="5k-15k">$5,000 - $15,000</option>
+                        <option value="15k+">$15,000+</option>
+                    </select>
+                </div>
+                <div class="form-group-custom">
+                    <textarea class="form-input" rows="3" placeholder="Brief project description..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-glow w-100">
+                    <i class="fas fa-rocket"></i>
+                    Submit Project
+                </button>
+            </form>
         </div>
     </div>
-</section>
-
-<!-- Blog Section -->
-<section class="blog-section">
-    <div class="container">
-        <div id="blogContainer">
-            <div class="loading">
-                <i class="fas fa-spinner"></i>
-                <p>Loading blog posts...</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Start Project Modal -->
-<div class="custom-modal-overlay" id="projectModal">
-    <div class="custom-modal">
-        <button class="modal-close" onclick="closeModal('projectModal')">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="modal-badge">🚀 LET'S BUILD</div>
-        <h3>Start Your Project</h3>
-        <p>Tell us about your project and we'll get back to you within 24 hours.</p>
-        <form id="projectStartForm">
-            <div class="form-group-custom">
-                <input type="text" class="form-input" placeholder="Your Name" required>
-            </div>
-            <div class="form-group-custom">
-                <input type="email" class="form-input" placeholder="Your Email" required>
-            </div>
-            <div class="form-group-custom">
-                <select class="form-input" required>
-                    <option value="">Select Service</option>
-                    <option value="ui-ux">UI/UX Design</option>
-                    <option value="branding">Branding</option>
-                    <option value="web">Website Design</option>
-                    <option value="growth">Digital Growth</option>
-                </select>
-            </div>
-            <div class="form-group-custom">
-                <select class="form-input">
-                    <option value="">Select Budget Range</option>
-                    <option value="1k-5k">$1,000 - $5,000</option>
-                    <option value="5k-15k">$5,000 - $15,000</option>
-                    <option value="15k+">$15,000+</option>
-                </select>
-            </div>
-            <div class="form-group-custom">
-                <textarea class="form-input" rows="3" placeholder="Brief project description..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-glow w-100">
-                <i class="fas fa-rocket"></i>
-                Submit Project
-            </button>
-        </form>
-    </div>
-</div>
 
 
-<!-- ========================================
+    <!-- ========================================
      FOOTER
      ======================================== -->
-<footer class="main-footer" style="overflow: hidden;">
-    <div class="container">
-        <div class="footer-top row g-4">
-            
-            <div class="col-lg-4">
-                <div class="footer-brand">
-                    <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="footer-logo">
+    <footer class="main-footer" style="overflow: hidden;">
+        <div class="container">
+            <div class="footer-top row g-4">
+
+                <div class="col-lg-4">
+                    <div class="footer-brand">
+                        <img src="assets/images/craftnix_logo.png" alt="Craftnix Digital" class="footer-logo">
+                    </div>
+
+                    <p class="footer-desc">
+                        We create digital experiences that drive results. Your success is our mission.
+                    </p>
                 </div>
-                
-                <p class="footer-desc">
-                    We create digital experiences that drive results. Your success is our mission.
-                </p>
+
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-heading">Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Branding</a></li>
+                        <li><a href="#services">Web Design</a></li>
+                        <li><a href="#services">Digital Growth</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-heading">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#portfolio">Our Work</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="admin-login.html">Admin</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="footer-heading">Newsletter</h6>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                        Get design tips and insights weekly.
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address" class="form-input">
+                        <button class="btn btn-glow btn-sm">Subscribe</button>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="col-lg-2 col-md-4">
-                <h6 class="footer-heading">Services</h6>
-                <ul class="footer-links">
-                    <li><a href="#services">UI/UX Design</a></li>
-                    <li><a href="#services">Branding</a></li>
-                    <li><a href="#services">Web Design</a></li>
-                    <li><a href="#services">Digital Growth</a></li>
-                </ul>
-            </div>
+            <hr class="footer-divider">
 
-            <div class="col-lg-2 col-md-4">
-                <h6 class="footer-heading">Company</h6>
-                <ul class="footer-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Our Work</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="admin-login.html">Admin</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-4">
-                <h6 class="footer-heading">Newsletter</h6>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
-                    Get design tips and insights weekly.
-                </p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your email address" class="form-input">
-                    <button class="btn btn-glow btn-sm">Subscribe</button>
+            <div class="footer-bottom">
+                <p>© 2026 Craftnix Digital. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html" target="_blank">Privacy Policy</a>
+                    <a href="terms.html" target="_blank">Terms of Service</a>
+                    <a href="cookie-policy.html">Cookie Policy</a>
                 </div>
             </div>
-
         </div>
-
-        <hr class="footer-divider">
-
-        <div class="footer-bottom">
-            <p>© 2026 Craftnix Digital. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="privacy.html" target="_blank">Privacy Policy</a>
-                <a href="terms.html" target="_blank">Terms of Service</a>
-                <a href="cookie-policy.html">Cookie Policy</a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
-<script>
-// Scroll Progress Bar
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    document.getElementById('scrollBar').style.width = scrollPercent + '%';
-});
-
-// Blog System with Firebase
-class BlogManager {
-    constructor() {
-        this.db = firebase.firestore();
-        this.blogContainer = document.getElementById('blogContainer');
-        this.init();
-    }
-
-    async init() {
-        try {
-            await this.loadBlogs();
-        } catch (error) {
-            console.error('Error initializing blog:', error);
-            this.showFallbackBlogs();
-        }
-    }
-
-    async loadBlogs() {
-        try {
-            console.log('📖 Loading blogs from database...');
-            const blogsRef = this.db.collection('blogs').orderBy('createdAt', 'desc');
-            const snapshot = await blogsRef.get();
-
-            console.log(`Found ${snapshot.size} blogs in database`);
-
-            if (snapshot.empty) {
-                console.log('No blogs found, seeding sample data...');
-                await this.seedSampleBlogs();
-                // Reload after seeding
-                return this.loadBlogs();
-            }
-
-            const blogs = [];
-            snapshot.forEach(doc => {
-                const blogData = { id: doc.id, ...doc.data() };
-                console.log('📝 Blog loaded:', blogData.title);
-                blogs.push(blogData);
-            });
-
-            console.log(`✅ Total blogs loaded: ${blogs.length}`);
-            this.renderBlogs(blogs);
-        } catch (error) {
-            console.error('❌ Error loading blogs:', error);
-            console.error('Error details:', error.message);
-            this.showFallbackBlogs();
-        }
-    }
-
-    async seedSampleBlogs() {
-        const sampleBlogs = [
-            
-        ];
-
-        for (const blog of sampleBlogs) {
-            const { id, ...blogData } = blog;
-            await this.db.collection('blogs').doc(id).set({
-                ...blogData,
-                createdAt: firebase.firestore.Timestamp.fromDate(blog.createdAt)
-            });
-        }
-    }
-
-    renderBlogs(blogs) {
-        console.log('🎨 Rendering blogs...');
-        const blogGrid = document.createElement('div');
-        blogGrid.className = 'blog-grid';
-
-        if (!blogs || blogs.length === 0) {
-            console.warn('⚠️ No blogs to render');
-            this.showNoBlogsMessage();
-            return;
-        }
-
-        blogs.forEach((blog, index) => {
-            try {
-                const blogCard = this.createBlogCard(blog, index);
-                blogGrid.appendChild(blogCard);
-            } catch (error) {
-                console.error(`❌ Error rendering blog "${blog.title}":`, error);
-            }
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('scrollBar').style.width = scrollPercent + '%';
         });
 
-        this.blogContainer.innerHTML = '';
-        this.blogContainer.appendChild(blogGrid);
-        console.log(`✅ Rendered ${blogs.length} blog cards`);
-    }
-
-    createBlogCard(blog, index) {
-        const card = document.createElement('div');
-        card.className = 'blog-card fade-in';
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        let date = 'Jan 1, 2024';
-        if (blog.createdAt) {
-            try {
-                // Handle Firestore Timestamp
-                const dateObj = typeof blog.createdAt.toDate === 'function' 
-                    ? blog.createdAt.toDate() 
-                    : new Date(blog.createdAt);
-                date = dateObj.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                });
-            } catch (error) {
-                console.error('Date parsing error:', error);
+        // Blog System with Firebase
+        class BlogManager {
+            constructor() {
+                this.db = firebase.firestore();
+                this.blogContainer = document.getElementById('blogContainer');
+                this.init();
             }
-        }
 
-        card.innerHTML = `
+            async init() {
+                try {
+                    await this.loadBlogs();
+                } catch (error) {
+                    console.error('Error initializing blog:', error);
+                    this.showFallbackBlogs();
+                }
+            }
+
+            async loadBlogs() {
+                try {
+                    // CLEANUP: Delete dummy blogs
+            const dummyIds = ['ui-principles', 'brand-identity', 'cro-secrets'];
+            dummyIds.forEach(id => this.db.collection('blogs').doc(id).delete().catch(() => {}));
+
+            console.log('📖 Loading blogs from database...');
+                    const blogsRef = this.db.collection('blogs').orderBy('createdAt', 'desc');
+                    const snapshot = await blogsRef.get();
+
+                    console.log(`Found ${snapshot.size} blogs in database`);
+
+                    if (snapshot.empty) {
+                        console.log('No blogs found, seeding sample data...');
+                        await this.seedSampleBlogs();
+                        // Reload after seeding
+                        return this.loadBlogs();
+                    }
+
+                    const blogs = [];
+                    snapshot.forEach(doc => {
+                        const blogData = { id: doc.id, ...doc.data() };
+                        console.log('📝 Blog loaded:', blogData.title);
+                        blogs.push(blogData);
+                    });
+
+                    console.log(`✅ Total blogs loaded: ${blogs.length}`);
+                    this.renderBlogs(blogs);
+                } catch (error) {
+                    console.error('❌ Error loading blogs:', error);
+                    console.error('Error details:', error.message);
+                    this.showFallbackBlogs();
+                }
+            }
+
+            async seedSampleBlogs() {
+                const sampleBlogs = [
+
+                ];
+
+                for (const blog of sampleBlogs) {
+                    const { id, ...blogData } = blog;
+                    await this.db.collection('blogs').doc(id).set({
+                        ...blogData,
+                        createdAt: firebase.firestore.Timestamp.fromDate(blog.createdAt)
+                    });
+                }
+            }
+
+            renderBlogs(blogs) {
+                console.log('🎨 Rendering blogs...');
+                const blogGrid = document.createElement('div');
+                blogGrid.className = 'blog-grid';
+
+                if (!blogs || blogs.length === 0) {
+                    console.warn('⚠️ No blogs to render');
+                    this.showNoBlogsMessage();
+                    return;
+                }
+
+                blogs.forEach((blog, index) => {
+                    try {
+                        const blogCard = this.createBlogCard(blog, index);
+                        blogGrid.appendChild(blogCard);
+                    } catch (error) {
+                        console.error(`❌ Error rendering blog "${blog.title}":`, error);
+                    }
+                });
+
+                this.blogContainer.innerHTML = '';
+                this.blogContainer.appendChild(blogGrid);
+                console.log(`✅ Rendered ${blogs.length} blog cards`);
+            }
+
+            createBlogCard(blog, index) {
+                const card = document.createElement('div');
+                card.className = 'blog-card fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+
+                let date = 'Jan 1, 2024';
+                if (blog.createdAt) {
+                    try {
+                        // Handle Firestore Timestamp
+                        const dateObj = typeof blog.createdAt.toDate === 'function'
+                            ? blog.createdAt.toDate()
+                            : new Date(blog.createdAt);
+                        date = dateObj.toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        });
+                    } catch (error) {
+                        console.error('Date parsing error:', error);
+                    }
+                }
+
+                card.innerHTML = `
             <div class="blog-img-wrap">
                 <img src="${blog.image || 'https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?q=80&w=2070&auto=format&fit=crop'}" alt="${blog.title}" loading="lazy">
                 <span class="blog-tag">${blog.category || 'General'}</span>
@@ -619,36 +738,36 @@ class BlogManager {
             </div>
         `;
 
-        return card;
-    }
+                return card;
+            }
 
-    showNoBlogsMessage() {
-        this.blogContainer.innerHTML = `
+            showNoBlogsMessage() {
+                this.blogContainer.innerHTML = `
             <div class="no-posts">
                 <i class="fas fa-newspaper" style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-muted);"></i>
                 <h3>No Blog Posts Yet</h3>
                 <p>We're working on bringing you amazing content. Check back soon!</p>
             </div>
         `;
-    }
+            }
 
-    showFallbackBlogs() {
-        const fallbackBlogs = [
-           
-        ];
+            showFallbackBlogs() {
+                const fallbackBlogs = [
 
-        this.renderBlogs(fallbackBlogs);
-    }
-}
+                ];
 
-// Initialize blog manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new BlogManager();
-});
-</script>
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
- <!-- Organization Schema -->
+                this.renderBlogs(fallbackBlogs);
+            }
+        }
+
+        // Initialize blog manager when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new BlogManager();
+        });
+    </script>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    <!-- Organization Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -792,11 +911,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ]
     }
     </script>
-<!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/utils.js"></script>
-<script src="js/main.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
