@@ -354,6 +354,7 @@ async function handleBlogSubmit(e) {
         const title = document.getElementById('blogTitle').value.trim();
         const tag = document.getElementById('blogTag').value;
         const excerpt = document.getElementById('blogExcerpt').value.trim();
+        const content = document.getElementById('blogContentField').value.trim();
         const link = document.getElementById('blogLink').value.trim();
         const readTime = parseInt(document.getElementById('blogReadTime').value) || 5;
         const order = parseInt(document.getElementById('blogOrder').value) || 1;
@@ -368,7 +369,7 @@ async function handleBlogSubmit(e) {
             image = doc.data()?.image || '';
         }
 
-        const data = { title, tag, excerpt, link, readTime, order, active, image };
+        const data = { title, tag, excerpt, content, link, readTime, order, active, image };
 
         if (editingBlogId) {
             await db.collection('blogs').doc(editingBlogId).update(data);
@@ -659,6 +660,7 @@ window.editBlog = async (id) => {
         document.getElementById('blogTitle').value = b.title || '';
         document.getElementById('blogTag').value = b.tag || 'UI/UX';
         document.getElementById('blogExcerpt').value = b.excerpt || '';
+        document.getElementById('blogContentField').value = b.content || '';
         document.getElementById('blogLink').value = b.link || '';
         document.getElementById('blogReadTime').value = b.readTime || 5;
         document.getElementById('blogOrder').value = b.order || 1;
