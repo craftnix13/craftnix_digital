@@ -535,7 +535,7 @@ body.admin-body {
         top: 0;
         height: 100vh;
         width: 280px;
-        z-index: 1001;
+       z-index: 9999;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
     }
