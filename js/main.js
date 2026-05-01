@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ---- THEME TOGGLE ----
     const themeBtn = document.getElementById('themeToggle');
-    const body     = document.body;
+    const body = document.body;
 
     // Load saved theme
     const savedTheme = localStorage.getItem('craftnix-theme') || 'dark';
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.toggle('light-mode');
             const isLight = body.classList.contains('light-mode');
             localStorage.setItem('craftnix-theme', isLight ? 'light' : 'dark');
-            themeBtn.innerHTML = isLight 
-                ? '<i class="fas fa-sun"></i>' 
+            themeBtn.innerHTML = isLight
+                ? '<i class="fas fa-sun"></i>'
                 : '<i class="fas fa-moon"></i>';
         });
     }
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         auditForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const name    = document.getElementById('auditName').value.trim();
-            const email   = document.getElementById('auditEmail').value.trim();
+            const name = document.getElementById('auditName').value.trim();
+            const email = document.getElementById('auditEmail').value.trim();
             const website = document.getElementById('auditWebsite').value.trim();
 
             if (!name || !email || !website) {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btn = auditForm.querySelector('button[type="submit"]');
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled  = true;
+            btn.disabled = true;
 
             try {
                 await db.collection('leads').add({
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast('Something went wrong. Try again!', 'error');
             } finally {
                 btn.innerHTML = '<i class="fas fa-chart-line"></i> Get My Free Audit';
-                btn.disabled  = false;
+                btn.disabled = false;
             }
         });
     }
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btn = projectForm.querySelector('button[type="submit"]');
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-            btn.disabled  = true;
+            btn.disabled = true;
 
             try {
                 const formData = {};
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showToast(`Error: ${err.message || 'Something went wrong. Try again!'}`, 'error');
             } finally {
                 btn.innerHTML = '<i class="fas fa-rocket"></i> Submit Project';
-                btn.disabled  = false;
+                btn.disabled = false;
             }
         });
     }
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const name    = document.getElementById('contactName').value.trim();
-            const email   = document.getElementById('contactEmail').value.trim();
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
             const message = document.getElementById('contactMessage').value.trim();
 
             if (!name || !email || !message) {
@@ -154,13 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const btn = contactForm.querySelector('button[type="submit"]');
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled  = true;
+            btn.disabled = true;
 
             try {
                 await db.collection('leads').add({
                     name,
                     email,
-                    phone:   document.getElementById('contactPhone')?.value   || '',
+                    phone: document.getElementById('contactPhone')?.value || '',
                     service: document.getElementById('contactService')?.value || '',
                     message,
                     type: 'contact',
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(err);
                 showToast('Error sending message. Please try again!', 'error');
                 btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-                btn.disabled  = false;
+                btn.disabled = false;
             }
         });
     }
@@ -429,8 +429,11 @@ async function loadPricing() {
 // ---- LOAD BLOGS FROM FIREBASE ----
 async function loadBlogs() {
     try {
-        // First, ensure sample blogs exist with correct IDs
-        await ensureBlogsExist();
+        // CLEANUP: Delete dummy blogs from database
+        const dummyIds = ['ui-principles', 'brand-identity', 'cro-secrets'];
+        dummyIds.forEach(id => db.collection('blogs').doc(id).delete().catch(() => {}));
+
+        // Seeder call removed
 
         const snap = await db.collection('blogs').orderBy('createdAt', 'desc').limit(3).get();
         const grid = document.getElementById('blogGrid');
@@ -443,13 +446,13 @@ async function loadBlogs() {
         snap.forEach(doc => {
             const b = doc.data();
             const blogId = doc.id;
-            
+
             // Ensure proper date handling
             let dateStr = 'Recent';
             if (b.createdAt) {
                 try {
-                    const dateObj = typeof b.createdAt.toDate === 'function' 
-                        ? b.createdAt.toDate() 
+                    const dateObj = typeof b.createdAt.toDate === 'function'
+                        ? b.createdAt.toDate()
                         : new Date(b.createdAt);
                     dateStr = dateObj.toLocaleDateString('en-US', {
                         year: 'numeric',
@@ -484,8 +487,8 @@ async function loadBlogs() {
         grid.innerHTML = html;
         initScrollAnimations();
         console.log('✅ Blogs loaded successfully');
-    } catch (err) { 
-        console.warn('Blog load skipped:', err.message); 
+    } catch (err) {
+        console.warn('Blog load skipped:', err.message);
     }
 }
 
@@ -561,11 +564,11 @@ function initScrollAnimations() {
 // ================================================
 
 const chatOpenBtn = document.getElementById('chatOpenBtn');
-const chatWidget  = document.getElementById('chatWidget');
-const chatToggle  = document.getElementById('chatToggle');
+const chatWidget = document.getElementById('chatWidget');
+const chatToggle = document.getElementById('chatToggle');
 const chatSendBtn = document.getElementById('chatSendBtn');
-const chatInput   = document.getElementById('chatInput');
-const chatMsgs    = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatMsgs = document.getElementById('chatMessages');
 
 // Open chat
 if (chatOpenBtn) {
@@ -669,10 +672,10 @@ document.addEventListener('click', (e) => {
     const ripple = document.createElement('span');
     ripple.className = 'ripple-effect';
 
-    const rect   = btn.getBoundingClientRect();
-    const size   = Math.max(rect.width, rect.height);
-    const x      = e.clientX - rect.left - size / 2;
-    const y      = e.clientY - rect.top  - size / 2;
+    const rect = btn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
 
     ripple.style.cssText = `
         width: ${size}px;
@@ -694,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsletterForms = document.querySelectorAll('.newsletter-form');
 
     newsletterForms.forEach(form => {
-        const btn   = form.querySelector('button');
+        const btn = form.querySelector('button');
         const input = form.querySelector('input[type="email"]');
 
         if (btn && input) {
@@ -706,7 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-                btn.disabled  = true;
+                btn.disabled = true;
 
                 try {
                     await db.collection('newsletter').add({
@@ -720,7 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     showToast('Error subscribing. Try again!', 'error');
                 } finally {
                     btn.innerHTML = 'Subscribe';
-                    btn.disabled  = false;
+                    btn.disabled = false;
                 }
             });
         }
