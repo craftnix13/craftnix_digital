@@ -29,8 +29,12 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark glass-nav sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <div class="d-flex align-items-center gap-2">
+                <!-- Mobile Toggle -->
+                <button class="admin-mobile-toggle d-lg-none" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
                 <span class="logo-icon">⚡</span>
                 <div class="logo-text">
                     <span class="brand-name">CRAFTNIX</span>
@@ -49,8 +53,15 @@
 
     <div class="admin-wrapper">
         <!-- Sidebar -->
-        <aside class="admin-sidebar">
-            <div class="sidebar-title">Menu</div>
+        <div class="admin-sidebar-overlay" id="sidebarOverlay"></div>
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header d-lg-none">
+                <div class="sidebar-title m-0">Menu</div>
+                <button class="sidebar-close-btn" id="sidebarClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="sidebar-title d-none d-lg-block">Menu</div>
             <div class="sidebar-nav">
                 <a href="#projects" class="sidebar-link active" data-section="projects">
                     <i class="fas fa-project-diagram"></i> Projects
@@ -379,11 +390,13 @@
                 </div>
                 <div class="admin-form-group">
                     <label class="form-label-admin">Short Content (Card) *</label>
-                    <textarea class="form-input" id="blogExcerpt" rows="2" required placeholder="This shows on the blog card"></textarea>
+                    <textarea class="form-input" id="blogExcerpt" rows="2" required
+                        placeholder="This shows on the blog card"></textarea>
                 </div>
                 <div class="admin-form-group">
                     <label class="form-label-admin">Full Content (Blog Page) *</label>
-                    <textarea class="form-input" id="blogContentField" rows="8" required placeholder="This shows on the main blog post page"></textarea>
+                    <textarea class="form-input" id="blogContentField" rows="8" required
+                        placeholder="This shows on the main blog post page"></textarea>
                 </div>
                 <div class="admin-form-group">
                     <label class="form-label-admin">External Link (Optional)</label>
