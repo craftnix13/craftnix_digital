@@ -397,7 +397,7 @@ async function loadPricing() {
                             <p>${p.featured ? 'For growing businesses' : 'Professional choice'}</p>
                         </div>
                         <div class="pricing-price">
-                            <span class="currency">$</span>
+                            <span class="currency">₹</span>
                             <span class="amount">${escapeHtml(p.price)}</span>
                             <span class="period">/project</span>
                         </div>
