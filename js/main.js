@@ -623,7 +623,7 @@ function getBotReply(msg) {
     const lower = msg.toLowerCase();
 
     if (lower.includes('price') || lower.includes('cost') || lower.includes('pricing')) {
-        return "Our pricing starts from ₹5499. Check our Pricing section above or click 'Start Project' to get a custom quote! 💰";
+        return "Our pricing starts from ₹3999. Check our Pricing section above or click 'Start Project' to get a custom quote! 💰";
     }
     if (lower.includes('service') || lower.includes('what do you do')) {
         return "We offer UI/UX Design, Branding, Website Design, and Digital Growth strategies. Which service interests you? 🎨";
