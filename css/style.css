@@ -729,10 +729,11 @@ body.light-mode .offcanvas-logo {
 }
 
 .stat h3 {
-    font-size: 2rem;
+        font-size: 22px;
     font-weight: 800;
     color: var(--purple);
     margin-bottom: 0.2rem;
+    margin-top: 10px;
 }
 
 .stat p {
